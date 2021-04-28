@@ -8,9 +8,9 @@
 ### User
 <table>
   <tr>
-    <th>字段名称</th>
+    <th>属性</th>
     <th>类型</th>
-    <th>约束条件</th>
+    <th>约束</th>
   </tr>
   <tr>
     <td>id</td>
@@ -37,9 +37,9 @@
 ### Friend
 <table>
   <tr>
-    <th>字段名称</th>
+    <th>属性</th>
     <th>类型</th>
-    <th>约束条件</th>
+    <th>约束</th>
   </tr>
   <tr>
     <td>userid</td>
@@ -48,7 +48,7 @@
   </tr>
   <tr>
     <td>friendid</td>
-    <td>int</td>
+    <td>INT</td>
     <td>NOT NULL, COMPOSITE KEY</td>
   </tr>
 </table>
@@ -56,9 +56,9 @@
 ### AllGroup
 <table>
   <tr>
-    <th>字段名称</th>
+    <th>属性</th>
     <th>类型</th>
-    <th>约束条件</th>
+    <th>约束</th>
   </tr>
   <tr>
     <td>id</td>
@@ -80,9 +80,9 @@
 ### GroupUser
 <table>
   <tr>
-    <th>字段名称</th>
+    <th>属性</th>
     <th>类型</th>
-    <th>约束条件</th>
+    <th>约束</th>
   </tr>
   <tr>
     <td>groupid</td>
@@ -104,9 +104,9 @@
 ### OfflineMessage
 <table>
   <tr>
-    <th>字段名称</th>
+    <th>属性</th>
     <th>类型</th>
-    <th>约束条件</th>
+    <th>约束</th>
   </tr>
   <tr>
     <td>userid</td>
