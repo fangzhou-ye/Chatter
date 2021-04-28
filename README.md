@@ -13,6 +13,7 @@
 # 使用服务器集群提高并发
 使用nginx tcp负载均衡模块配置服务器集群，提高并发。客户端连接负载均衡器，由负载均衡器 **选择(轮询方式)** 具体的一台服务器与客户端连接。使用基于**发布-订阅**的消息队列(Redis)实现跨服务器通信。
 
+![alt text](https://github.com/fangzhou-ye/Chatter/blob/master/architecture.png)
 # 数据库设计
 ### User
 <table>
