@@ -129,3 +129,36 @@
     <td>NOT NULL</td>
   </tr>
 </table>
+
+```sql
+CREATE TABLE User(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(50) NOT NULL,
+    state ENUM('online', 'offline') DEFAULT 'offline' 
+);
+
+CREATE TABLE Friend(
+    userid INT NOT NULL,
+    friendid INT NOT NULL,
+    PRIMARY KEY(userid, friendid)
+);
+
+CREATE TABLE AllGroup(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    groupname VARCHAR(50) NOT NULL UNIQUE,
+    groupdesc VARCHAR(200) DEFAULT ''
+);
+
+CREATE TABLE GroupUser(
+    groupid INT NOT NULL,
+    userid INT NOT NULL,
+    grouprole ENUM('creator', 'normal') DEFAULT 'normal',
+    PRIMARY KEY(groupid, userid)
+);
+
+CREATE TABLE OfflineMessage(
+    userid INT NOT NULL,
+    message VARCHAR(500) NOT NULL
+);
+```
