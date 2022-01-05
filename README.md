@@ -15,7 +15,7 @@ This project is composed of **network module**，**service module**and**data mod
 using Nginx load balancer to configure the server cluster. The client only connect to the balancer and balancer select (round-robin) a server of the cluster to connect to. The communication between the clients in different servers is supported by the message queue of Redis.
 
 ![alt text](https://github.com/fangzhou-ye/Chatter/blob/master/architecture.png)
-# 数据库设计
+# Database design
 ### User
 <table>
   <tr>
