@@ -3,7 +3,7 @@ This is a
 This is a cluster chat server working in an nginx tcp load balancing environment，based on [muduo](https://github.com/chenshuo/muduo)
 implementing user register, login, one-to-one chat and chat in groups 
 
-This project is composed of **network module**，**service module**and**data module**
+This project is composed of **network module**，**service module** and **data module**
 
 ### dependencies
 * [muduo](https://github.com/chenshuo/muduo) multithreaded network library
