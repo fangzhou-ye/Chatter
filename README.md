@@ -1,26 +1,27 @@
 # Chatter
-这是一个工作在nginx tcp负载均衡环境下的集群聊天服务器，基于[muduo多线程网络库](https://github.com/chenshuo/muduo)实现
-实现了用户注册，登录，一对一聊天，群组聊天的常用功能。
+This is a 
+This is a cluster chat server working in an nginx tcp load balancing environment，based on [muduo](https://github.com/chenshuo/muduo)
+implementing user register, login, one-to-one chat and chat in groups 
 
-该项目主要由**网络模块**，**业务逻辑处理模块**和**数据模块**构成。
+This project is composed of **network module**，**service module**and**data module**
 
-### 项目的依赖
-* [muduo](https://github.com/chenshuo/muduo) 多线程网络库
-* [nginx](https://www.nginx.com/) 中的tcp负载均衡模块
-* [hiredis](https://github.com/redis/hiredis) Redis对C++语言的支持
-* [JSON for Modern C++](https://github.com/nlohmann/json) 第三方JSON库
+### dependencies
+* [muduo](https://github.com/chenshuo/muduo) multithreaded network library
+* [nginx](https://www.nginx.com/) load balancer
+* [hiredis](https://github.com/redis/hiredis) Redis for C++ support
+* [JSON for Modern C++](https://github.com/nlohmann/json) JSON library
 
-# 使用服务器集群提高并发
-使用nginx tcp负载均衡模块配置服务器集群，提高并发。客户端连接负载均衡器，由负载均衡器 **选择(轮询方式)** 具体的一台服务器与客户端连接。使用基于**发布-订阅**的消息队列(Redis)实现跨服务器通信。
+# Server cluster for high parallelism
+using Nginx load balancer to configure the server cluster. The client only connect to the balancer and balancer select (round-robin) a server of the cluster to connect to. The communication between the clients in different servers is supported by the message queue of Redis.
 
 ![alt text](https://github.com/fangzhou-ye/Chatter/blob/master/architecture.png)
 # 数据库设计
 ### User
 <table>
   <tr>
-    <th>属性</th>
-    <th>类型</th>
-    <th>约束</th>
+    <th>attribute</th>
+    <th>type</th>
+    <th>constraint</th>
   </tr>
   <tr>
     <td>id</td>
@@ -47,9 +48,9 @@
 ### Friend
 <table>
   <tr>
-    <th>属性</th>
-    <th>类型</th>
-    <th>约束</th>
+    <th>attribute</th>
+    <th>type</th>
+    <th>constraint</th>
   </tr>
   <tr>
     <td>userid</td>
@@ -66,9 +67,9 @@
 ### AllGroup
 <table>
   <tr>
-    <th>属性</th>
-    <th>类型</th>
-    <th>约束</th>
+    <th>attribute</th>
+    <th>type</th>
+    <th>constraint</th>
   </tr>
   <tr>
     <td>id</td>
@@ -90,9 +91,9 @@
 ### GroupUser
 <table>
   <tr>
-    <th>属性</th>
-    <th>类型</th>
-    <th>约束</th>
+    <th>attribute</th>
+    <th>type</th>
+    <th>constraint</th>
   </tr>
   <tr>
     <td>groupid</td>
@@ -114,9 +115,9 @@
 ### OfflineMessage
 <table>
   <tr>
-    <th>属性</th>
-    <th>类型</th>
-    <th>约束</th>
+    <th>attribute</th>
+    <th>type</th>
+    <th>constraint</th>
   </tr>
   <tr>
     <td>userid</td>
